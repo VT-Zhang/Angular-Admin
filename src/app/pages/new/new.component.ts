@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { NewService } from './new.service';
+
 
 @Component({
   selector: 'new',
@@ -8,9 +9,23 @@ import { NewService } from './new.service';
   styleUrls: ['./new.scss']
 })
 export class NewComponent {
-    query: string = '';
+    public data: any;
+    public zoho_id: string;
+    public zoho: object =
+    {
+      name: "",
+      phone: "",
+      fax: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: "",
+    };
 
   settings = {
+    pager: {
+      perPage: 15,
+    },
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
       createButtonContent: '<i class="ion-checkmark"></i>',
@@ -43,22 +58,35 @@ export class NewComponent {
         type: 'string'
       },
       email: {
-        title: 'E-mail',
+        title: 'Email',
         type: 'string'
       },
       age: {
         title: 'Age',
-        type: 'number'
-      }
-    }
+        type: 'string'
+      },
+    },
   };
+
+  ngOnInit() {
+    this.service
+    .getZohoID()
+    .subscribe(data => this.data = data)
+  }
 
   source: LocalDataSource = new LocalDataSource();
   constructor(protected service: NewService) {
-      this.service.getData()
+      this.service
+      .getData()
       .then((data) => {
           this.source.load(data);
       });
+  }
+
+  onChange(id){
+    this.service
+    .getZohoAccount(id)
+    .subscribe(zoho => this.zoho = zoho)
   }
 
   onDeleteConfirm(event): void {
