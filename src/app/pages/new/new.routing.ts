@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { ClientNewComponent } from './client-new.component';
+import { NewComponent } from './new.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientNewComponent
+    component: NewComponent
   }
 ];
 

@@ -3,11 +3,11 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
-        path: 'new/client',  // path for our page
+        path: 'new',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'New Client', // menu title
-            icon: 'ion-compose', // menu icon
+            title: 'New Page', // menu title
+            icon: 'ion-android-home', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,

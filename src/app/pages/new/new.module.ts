@@ -2,8 +2,8 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { ClientNewComponent } from './client-new.component';
-import { routing } from './client-new.routing';
+import { NewComponent } from './new.component';
+import { routing } from './new.routing';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { routing } from './client-new.routing';
     routing
   ],
   declarations: [
-    ClientNewComponent
+    NewComponent
   ]
 })
 export class NewModule {}
