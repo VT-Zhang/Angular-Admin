@@ -7,7 +7,7 @@ export const PAGES_MENU = [
         data: { // custom menu declaration
           menu: {
             title: 'New Page', // menu title
-            icon: 'ion-android-home', // menu icon
+            icon: 'ion-compose', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
