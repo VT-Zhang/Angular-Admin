@@ -9,8 +9,6 @@ export class NewService {
   
   private url = "http://127.0.0.1:8000/api/zohocrm";
   
-  data: any;
-
   public getZohoID() {
     return this.http
     .get(this.url)
