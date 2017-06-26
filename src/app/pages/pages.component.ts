@@ -38,4 +38,11 @@ export class Pages {
   ngOnInit() {
     this._menuService.updateMenuByRoutes(<Routes>PAGES_MENU);
   }
+
+   client_type = [
+        {value: "Clinic"},
+        {value: "Patient"},
+        {value: "Research Institute"},
+        {value: "Others"},
+    ]
 }
