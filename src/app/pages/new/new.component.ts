@@ -22,6 +22,13 @@ export class NewComponent {
       zip: "",
     };
 
+    client_type = [
+        {value: "Clinic"},
+        {value: "Patient"},
+        {value: "Research Institute"},
+        {value: "Others"},
+    ]
+
   settings = {
     pager: {
       perPage: 15,
