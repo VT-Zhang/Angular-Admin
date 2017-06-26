@@ -31,9 +31,6 @@ export class Login implements OnInit {
   //   this.password = this.form.controls['password'];
   // }
 
-  constructor(
-        private router: Router,
-        private authenticationService: AuthenticationService) { }
 
   // public onSubmit(values:Object):void {
   //   this.loading = true;
@@ -50,6 +47,9 @@ export class Login implements OnInit {
   //   }
   // }
 
+  constructor(
+        private router: Router,
+        private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
         // reset login status
@@ -61,7 +61,7 @@ export class Login implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(result => {
                 if (result === true) {
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/pages/new']);
                 } else {
                     this.error = 'Username or password is incorrect';
                     this.loading = false;
